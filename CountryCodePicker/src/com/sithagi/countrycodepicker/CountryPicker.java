@@ -150,7 +150,8 @@ public class CountryPicker extends DialogFragment implements Comparator<Country>
     if (displayedCountriesCodes != null) {
       List<Country> filteredCountries = getCountriesWithCodes(displayedCountriesCodes);
       this.allCountriesList = filteredCountries;
-      this.selectedCountriesList = filteredCountries;
+      this.selectedCountriesList = new ArrayList<>();
+      selectedCountriesList.addAll(allCountriesList);
     }
 
     searchEditText = (EditText) view.findViewById(R.id.country_code_picker_search);
